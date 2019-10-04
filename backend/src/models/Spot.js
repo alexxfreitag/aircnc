@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
 const SpotSchema = new mongoose.Schema({
   thumbnail: String,
@@ -9,6 +9,6 @@ const SpotSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
   }
-});
+})
 
-module.exports = mongoose.model('Spot', SpotSchema);
+module.exports = mongoose.model('Spot', SpotSchema)
