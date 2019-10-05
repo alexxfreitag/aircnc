@@ -15,7 +15,11 @@ function App() {
       //email: email
     });
 
-    console.log(response);
+    const { _id } = response.data;
+
+    //banco para salvar dados no navegador
+    //é possível verificar através do Application ao inspecionar o elemento
+    localStorage.setItem('user', _id); 
   }
 
   return (
