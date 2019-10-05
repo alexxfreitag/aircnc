@@ -18,6 +18,68 @@ body {
 }
 
 body, input, button {
-  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-family: Roboto, Arial, Helvetica, sans-serif; /*usa a fonte Roboto, se não tiver, usa fonte conforme vier na sequência*/
   font-size: 14px;
+}
+
+.container {
+  margin: 80px auto 0; /*centraliza horizontalmente*/
+  max-width: 450px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content {
+  width: 100%;
+  background: #FFF;
+  margin-top: 50px;
+  border-radius: 4px;
+  padding: 30px;
+}
+
+/*O "> p" significa que só vai servir para o primeiro "<p>", os outros não irão sofrer essa customização*/ 
+.content > p {
+  font-size: 22px;
+  line-height: 30px;
+  margin-bottom: 30px;
+}
+
+.content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.content form label {
+  font-size: 14px;
+  color: #444;
+  font-weight: bold;
+  margin-bottom: 8px;
+} 
+
+.content form input {
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  height: 45px;
+  padding: 0 15px; /*colocar padding apenas na lateral*/
+  font-size: 16px;
+}
+
+.content button.btn {
+  border: 0;
+  border-radius: 2px;
+  width: 100%;
+  height: 42px;
+  padding: 0 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background: #f05a5b;
+  color: #fff;
+  cursor: pointer; /*muda a forma do cursor quando passa por cima do botão*/
+}
+
+.content button.btn:hover{
+  background: #e14f50;
 }
