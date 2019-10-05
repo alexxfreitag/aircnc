@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('./cors');
 const routes = require('./routes');
 
 const app = express();
@@ -24,7 +25,10 @@ usar o express.json antes do use routes, pois o node é sequencial, ou seja, se 
 não vai conseguir ler em json
 */
 
-app.use(express.json()); //para dizer ao express que irá receber informações em json
+//permite que qualquer aplicação acesse essa api; pode usar o origin para informar a url caso queria dar permissão á uma aplicação específica
+app.use(cors()); 
+//para dizer ao express que irá receber informações em json
+app.use(express.json()); 
 app.use(routes);
 
 app.listen(3333);
