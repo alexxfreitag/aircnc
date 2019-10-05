@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import api from '../../services/api';
 
-export default function Login() {
+export default function Login({ history }) {
   const [email, setEmail] = useState('');
 
   async function handleSubmit(event) {
@@ -17,6 +17,8 @@ export default function Login() {
     //banco para salvar dados no navegador
     //é possível verificar através do Application ao inspecionar o elemento
     localStorage.setItem('user', _id); 
+
+    history.push('/dashboard');
   }
 
   return (
