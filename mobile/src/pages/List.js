@@ -13,8 +13,6 @@ export default function List() {
   }, []);
 
   return (
-    <View>
-      <Text>{techs}</Text>
-    </View>
+    <Text>{techs}</Text>
   );
 }
