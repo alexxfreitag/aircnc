@@ -3,7 +3,7 @@ import {
   SafeAreaView,
   ScrollView,
   AsyncStorage,
-  Text,
+  TouchableHighlight,
   Image,
   StyleSheet,
 } from 'react-native';
@@ -12,7 +12,7 @@ import SpotList from '../components/SpotList';
 
 import logo from '../assets/logo.png';
 
-export default function List() {
+export default function List({navigation}) {
   const [techs, setTechs] = useState([]);
 
   useEffect(() => {
@@ -24,9 +24,16 @@ export default function List() {
     });
   }, []);
 
+  function handleHome() {
+    AsyncStorage.clear();
+    navigation.navigate('Login');
+  }
+
   return (
     <SafeAreaView style={styles.container}>
-      <Image style={styles.logo} source={logo} />
+      <TouchableHighlight onPress={handleHome}>
+        <Image style={styles.logo} source={logo} />
+      </TouchableHighlight>
       <ScrollView>
         {techs.map(tech => (
           <SpotList key={tech} tech={tech} />
