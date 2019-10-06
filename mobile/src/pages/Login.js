@@ -19,11 +19,12 @@ export default function Login({navigation}) {
   const [techs, setTechs] = useState('');
 
   useEffect(() => {
+    console.log(AsyncStorage.getItem);
     AsyncStorage.getItem('user').then(user => {
       if (user) {
         navigation.navigate('List');
       }
-    })
+    });
   }, []);
 
   async function handleSubmit() {
@@ -54,7 +55,7 @@ export default function Login({navigation}) {
           autoCapitalize="none"
           autoCorrect={false}
           value={email}
-          onChangeText={setEmail /* ou text => setEmail(text)*/}
+          onChangeText={setEmail}
         />
         <Text style={styles.label}>TECNOLOGIAS *</Text>
         <TextInput
