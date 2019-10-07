@@ -18,12 +18,15 @@ export default function List({navigation}) {
   const [techs, setTechs] = useState([]);
 
   useEffect(() => {
+    console.log('teste');
     AsyncStorage.getItem('user').then(user_id => {
       const socket = socketio('http://192.168.25.32:3333', {
         query: {user_id},
       });
 
+      console.log('antes do alert...');
       socket.on('booking_response', booking => {
+        console.log('mudou o response');
         Alert.alert(
           `Sua reserva em ${booking.spot.company} em ${booking.date} foi ${
             booking.approved ? 'APROVADA' : 'REJEITADA'
