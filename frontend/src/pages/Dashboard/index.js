@@ -35,9 +35,7 @@ export default function Dashboard() {
   }, []);
 
   async function handleAccept(id) {
-    console.log('ID USADO: ' + id);
     await api.post(`/bookings/${id}/approvals`);
-    console.log('fudeu');
     setRequests(requests.filter(request => request._id !== id));
   }
 
