@@ -1,2 +1,2 @@
 # aircnc
-Estudo das linguagens Node, React e React Native da semana OmniStack promovida pela Rocketseat.
+A NodeJS, ReactJs and React Native application inspired by AirBnB, promoted by Rocketseat on OmniStack Week.
